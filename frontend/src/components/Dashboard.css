@@ -1,0 +1,191 @@
+.header {
+  outline: 0.5px solid #1a1a7e;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 4rem;
+  position: sticky;
+  top: 0;
+  background-image: linear-gradient(to left, #1a1a7e, #390652, #33032f, #220416, #000000);
+}
+
+.header > h2 {
+  margin-left: 3rem;
+}
+
+.header > nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+}
+
+.header > nav > div {
+  width: 20rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.header > nav > div > button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+
+.header > nav > div > .current-page {
+  border-bottom: 2px solid #fff;
+}
+
+.header > nav > div > button:hover {
+  border-bottom: 2px solid #fff;
+  cursor: pointer;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: max-content 1fr;
+  gap: 0rem;
+}
+
+.charts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.lineChart {
+  height: 75vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: max-content max-content 1fr;
+}
+
+.lineChart > h1 {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.lineChart-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.688rem, 1fr));
+  gap: 0.5rem;
+  place-items: center center;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.lineChart-buttons > div > button{
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid #1a1a7e;
+  padding: 0.2rem;
+  width: 6rem;
+  cursor: pointer;
+  transition: all 3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.lineChart-buttons > div > button[name='info']{
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid #1a1a7e;
+  padding: 0.2rem;
+  width: max-content;
+  cursor: pointer;
+  transition: all 3s cubic-bezier(0.19, 1, 0.22, 1);
+  margin-left: 0.2rem;
+}
+
+.lineChart-buttons > div > button:hover {
+  box-shadow: inset 0 0 20px #1a1a7e50, 0 0 20px #ffffff40;
+}
+
+.lineChart-buttons > div > button[name='info']:hover {
+  box-shadow: inset 0 0 20px #1a1a7e50, 0 0 20px #ffffff40;
+}
+
+.svg-container {
+  position: relative;
+}
+
+.lineChart-buttons-row {
+  width: 7.688rem;
+}
+
+.list-trans {
+  display: flex;
+  flex-direction: column;
+}
+
+.latestTrans {
+  padding-top: 0.3rem;
+  place-self: center;
+}
+
+.latestTrans > h1 {
+  text-align: center;
+}
+
+@media (max-width: 650px){
+  .latestTrans{
+    place-self: center;
+  }
+}
+
+@media (max-width: 700px){
+  
+/*
+  .latestTrans{
+    place-self: center;
+    padding-top: 9.2rem;
+  } */
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header > h2 {
+    margin-left: 0;
+  }
+
+  .header > nav > div {
+    width: 98vw;
+  }
+
+  .header > nav > div > p {
+    width: 6rem;
+    text-align: center;
+  }
+
+  /* .circleChart {
+    width: 90%;
+    height: 45%;
+  }
+
+  .lineChart {
+    width: 90%;
+    height: 100%;
+  } */
+}
+
+
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 4px;
+  background-color: #1a1a7e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 5px;
+}
+
+
+
+

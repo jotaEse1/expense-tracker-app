@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    font-size: calc(14px + (25 - 14) * ((100vw - 280px) / (4000 - 280))) !important; 
+}
+  
+#root {
+    background-image: linear-gradient(to left, #1a1a7e, #390652, #33032f, #220416, #000000);
+    min-height: 100vh;
+    position: relative;
+}
+
+
+
+

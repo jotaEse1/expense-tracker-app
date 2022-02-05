@@ -1,0 +1,67 @@
+.signin-container {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signin-container > form {
+    height: 15rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.signin-container > form > label{
+    width: 14rem;
+}
+
+.signin-container > form > input{
+    width: 14rem;
+    height: 2rem;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff2;
+    border-radius: 3px;
+}
+
+.signin-container > form > input::placeholder{
+    color: #fff8;
+    
+}
+
+.signin-container > form > span{
+    font-size: 0.8rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.signin-container > form > span:hover{
+    border-bottom: 2px solid #fff;
+}
+
+.signin-container > form > button{
+    background-color: transparent;
+    border-radius: 3px;
+    border: 2px solid #fff2;
+    padding: 0.2rem;
+    width: 6rem;
+    cursor: pointer;
+}
+
+.signin-container > form > button:hover{
+    border: 2px solid #fff;
+    
+}
+
+@media (max-width: 300px){
+    .signin-container{
+        width: 17.5rem;
+    }
+
+    .signin-container > form{
+        width: 17.5rem;
+    }
+}

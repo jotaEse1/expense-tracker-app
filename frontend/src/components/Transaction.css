@@ -1,0 +1,64 @@
+.transaction {
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    background-color: transparent;
+    outline: 2px solid #1a1a7e;
+    padding: 0.9rem;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px 0px #000;
+    margin: 0.45rem 0;
+}
+
+.transaction-info-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.transaction-info-date {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.transaction-info-description {
+    font-size: 1.15rem;
+}
+
+.transaction-price {
+   place-self: center center;
+
+}
+
+.transaction-price > p {
+    font-weight: bold;
+ 
+ }
+
+@media (max-width: 650px){
+    .transaction {
+        width: 90vw;
+        grid-template-columns: 70% 30%;
+  
+    }
+  
+    .latestTrans > h1 {
+        text-align: center;
+          
+    }
+}
+
+/* @media (max-width: 700px){
+    .transaction {
+      width: 90vw;
+      grid-template-columns: 70% 30%;
+
+    }
+
+    .latestTrans > h1 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    
+
+} */

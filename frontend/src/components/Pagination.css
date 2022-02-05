@@ -1,0 +1,25 @@
+.pagination {
+    min-height: 77vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 1rem 0rem;
+    justify-self: flex-end;
+}
+
+.pagination-control > button {
+    width: 3rem;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 2px solid #1a1a7e;
+    padding: 0.2rem;
+    cursor: pointer;
+}
