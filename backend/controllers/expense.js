@@ -6,7 +6,6 @@ const {
 
 const createTransaction = (req, res) => {
     const data = req.body;
-    console.log(data)
 
     addTransaction(data)
         .then((response) => res.json({success: true, status: 'created', msg: 'none', data: response}))

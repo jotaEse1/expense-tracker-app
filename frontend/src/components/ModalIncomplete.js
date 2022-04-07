@@ -4,7 +4,6 @@ import {animated} from 'react-spring'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faExclamation} from '@fortawesome/free-solid-svg-icons'
 
-
 const ModalIncomplete = ({style}) => {
     return (
         <> 

@@ -27,6 +27,21 @@ app.use(express.json())
 app.use(root)
 app.use('/api/autentication', autentication)
 app.use('/api/v1', expense)
+
+//-------------deployment----------------
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static(path.join(process.cwd(), '/frontend/build')))
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(process.cwd(), 'frontend', 'build', 'index.html'))
+    })
+}else{
+    app.get('/', (req, res) => {
+        res.send('backend is running...')
+    })
+}
+//-------------deployment----------------
+
 app.use('*', (req, res) => {
     res.status(404).send(`<h1>Error 404</h1> <p>Page not found<p>`)
 })

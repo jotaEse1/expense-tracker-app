@@ -2,7 +2,6 @@ import React from 'react';
 import './Transaction.css'
 import {animated} from 'react-spring'
 
-
 const Transaction = ({transaction, listTransactions}) => {
     const {category, description, price, unix} = transaction
 

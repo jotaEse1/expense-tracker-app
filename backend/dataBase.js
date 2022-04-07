@@ -66,8 +66,6 @@ const addTransaction = async ({category, description, price, id}) => {
 const findTransaction = async ({category, price, dateFrom, dateTo, type, id}) => {
     const fromUnix = dateFrom !== 'empty'? new Date(dateFrom).getTime() : new Date('2015-01-01').getTime(),
         toUnix = dateTo !== 'empty'? new Date(dateTo).getTime() : Date.now()
-
-    console.log(id)
    
     if (type === 'latest'){
         const results = await Transaction.find({idUser: id, unix: {$gt: fromUnix, $lt: toUnix}})

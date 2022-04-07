@@ -5,8 +5,8 @@ const unixHelper = (timeRange) => {
     unix1D = a1D - b1D
 
     //7 days unix
-    const a7D = new Date('2000-01-10'),
-        b7D = new Date('2000-01-03'),
+    const a7D = new Date('2000-01-12'),
+        b7D = new Date('2000-01-02'),
         unix7D = a7D - b7D
     
     //1 month unix
@@ -28,7 +28,7 @@ const unixHelper = (timeRange) => {
   const rangeObj = {}
 
   const unixRange = (unix) => {
-    const unixToday = new Date().getTime() + unix1D,
+    const unixToday = new Date().getTime() + unix1D + unix1D,
          diff = new Date(unixToday - unix),
          year = diff.getFullYear(),
          month = `${diff.getMonth() + 1}`.length === 1? `0${diff.getMonth() + 1}` : `${diff.getMonth() + 1}`,

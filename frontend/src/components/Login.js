@@ -1,12 +1,9 @@
 import React, {useState} from 'react';
 import './Login.css'
-import {useTransition, useSpring, animated, config} from 'react-spring'
-
-
+import {animated} from 'react-spring'
 
 const Login = ({handleAutentication, setShow, changeOptions, autentication}) => {
     const [form, setForm] = useState('');
-
 
     const handleForm = (e) => {
         setForm({

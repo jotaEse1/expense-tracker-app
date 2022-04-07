@@ -2,7 +2,6 @@ import React from 'react';
 import './ModalAut.css'
 import {animated} from 'react-spring'
 
-
 const ModalAut = ({msg, style}) => {
     return (
         <> 

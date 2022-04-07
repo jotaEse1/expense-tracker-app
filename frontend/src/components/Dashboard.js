@@ -11,6 +11,7 @@ import {useState, useEffect} from 'react'
 import {useTransition, animated, config} from 'react-spring'
 import {unixHelper} from '../helpers/unixHelper'
 import './Dashboard.css';
+import {URLS} from '../constants/constants'
 
 
 const Dashboard = ({idUser, setAutentication, setIdUser, username}) => {
@@ -33,7 +34,7 @@ const Dashboard = ({idUser, setAutentication, setIdUser, username}) => {
 
   //fetch data for latest transactions when the component did mount
   useEffect(() => {
-    const urlLatest = `https://expense-tracker.joaquinsanchez9.repl.co/api/v1/search?category=empty&price=empty&dateFrom=empty&dateTo=empty&type=latest&id=${idUser}`
+    const urlLatest = `${URLS.SEARCH}?category=empty&price=empty&dateFrom=empty&dateTo=empty&type=latest&id=${idUser}`
  
     fetch(urlLatest)
       .then(res => res.json())
@@ -47,9 +48,9 @@ const Dashboard = ({idUser, setAutentication, setIdUser, username}) => {
     if (!forceRender) return;
 
     const rangeObj = unixHelper(timeRange),
-        urlLatest = `https://expense-tracker.joaquinsanchez9.repl.co/api/v1/search?category=empty&price=empty&dateFrom=empty&dateTo=empty&type=latest&id=${idUser}`,
-        urlAll = `https://expense-tracker.joaquinsanchez9.repl.co/api/v1/search?category=${forceRender.category}&price=0&dateFrom=empty&dateTo=empty&id=${idUser}`,
-        urlCharts = `https://expense-tracker.joaquinsanchez9.repl.co/api/v1/search?category=empty&price=0&dateFrom=${rangeObj.from}&dateTo=${rangeObj.to}&id=${idUser}`;
+        urlLatest = `${URLS.SEARCH}?category=empty&price=empty&dateFrom=empty&dateTo=empty&type=latest&id=${idUser}`,
+        urlAll = `${URLS.SEARCH}?category=${forceRender.category}&price=0&dateFrom=empty&dateTo=empty&id=${idUser}`,
+        urlCharts = `${URLS.SEARCH}?category=empty&price=0&dateFrom=${rangeObj.from}&dateTo=${rangeObj.to}&id=${idUser}`;
     
     Promise.all([
         fetch(urlLatest),
@@ -67,7 +68,7 @@ const Dashboard = ({idUser, setAutentication, setIdUser, username}) => {
   //when the user choose the time range it´s neccesary to fetch the data in that time range
   useEffect(() => {
     const rangeObj = unixHelper(timeRange),
-        urlCharts = `https://expense-tracker.joaquinsanchez9.repl.co/api/v1/search?category=empty&price=0&dateFrom=${rangeObj.from}&dateTo=${rangeObj.to}&id=${idUser}`;
+        urlCharts = `${URLS.SEARCH}?category=empty&price=0&dateFrom=${rangeObj.from}&dateTo=${rangeObj.to}&id=${idUser}`;
 
      fetch(urlCharts)
         .then(res => res.json())
@@ -139,7 +140,7 @@ const Dashboard = ({idUser, setAutentication, setIdUser, username}) => {
             return setTimeout(() => setModalError(false), 2000)
           } 
 
-    const url = `https://expense-tracker.joaquinsanchez9.repl.co/api/v1/search?category=${category}&price=${price}&dateFrom=${dateFrom}&dateTo=${dateTo}&id=${idUser}`
+    const url = `${URLS.SEARCH}?category=${category}&price=${price}&dateFrom=${dateFrom}&dateTo=${dateTo}&id=${idUser}`
 
     fetch(url)
       .then(res => res.json())
@@ -162,7 +163,7 @@ const Dashboard = ({idUser, setAutentication, setIdUser, username}) => {
 
   //this is executed when create a transaction
   const handleCreate = (data) => {
-    const url = `https://expense-tracker.joaquinsanchez9.repl.co/api/v1/create`
+    const url = URLS.CREATE
     data.id = idUser;
 
     const options = {

@@ -2,9 +2,7 @@ import React, {useState} from 'react';
 import {animated} from 'react-spring'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTimes, faSearch, faPlus} from '@fortawesome/free-solid-svg-icons'
-
 import './Modal.css'
-
 
 const Modal = ({modalAppear, setModalVisible, handleSearch, handleCreate, setModalIncomplete, setListTransHandler}) => {
     const [form, setForm] = useState('');

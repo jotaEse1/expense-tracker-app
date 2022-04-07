@@ -9,7 +9,7 @@ import './LineChart.css'
 const LineChart = ({chartsData, timeRange, setTimeRange, setModalInfo, setDetailedData, username}) => {
     const svgRef = useRef(),
         width = window.screen.width;
-    
+        
     //when the data or the screen of the client changes, the chart is drawn
     useEffect(() => {
         if (chartsData === 'empty') return;

@@ -4,6 +4,7 @@ import Autentication from './components/Autentication';
 import ModalAut from './components/ModalAut'
 import Dashboard from './components/Dashboard';
 import {useTransition, animated, config} from 'react-spring'
+import {URLS} from './constants/constants'
 
 const App = () => {
     const [autentication, setAutentication] = useState(false);
@@ -61,7 +62,7 @@ const App = () => {
         if (type === 'Signin' && form) return signin(form)
         
         function login(data){
-            const url = 'https://Expense-Tracker.joaquinsanchez9.repl.co/api/autentication/login',
+            const url = URLS.LOGIN,
                 options = {
                     method: 'POST',
                     headers: {
@@ -102,7 +103,7 @@ const App = () => {
                 setMsg(`Username must be less than 20 characters`)
                 return setTimeout(() => setModal(false), 3000)
             }
-            const url = 'https://Expense-Tracker.joaquinsanchez9.repl.co/api/autentication/signin',
+            const url = URLS.REGISTER,
                 options = {
                     method: 'POST',
                     headers: {
