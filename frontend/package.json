@@ -1,6 +1,6 @@
 {
   "homepage":"https://jexpense-tracker.herokuapp.com/",
-  "name": "frontend",
+  "name": "jexpense-tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
