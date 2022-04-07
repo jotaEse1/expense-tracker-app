@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
 
-app.use(root)
+//app.use(root)
 app.use('/api/autentication', autentication)
 app.use('/api/v1', expense)
 
